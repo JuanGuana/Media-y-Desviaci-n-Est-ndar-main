@@ -1,0 +1,159 @@
+
+:root {
+    --color-primary: #007bff; 
+    --color-secondary: #6c757d; 
+    --color-background: #f8f9fa; 
+    --color-card-bg: #ffffff; 
+    --color-error: #dc3545; 
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --shadow-subtle: 0 0.5rem 1rem rgba(0, 0, 0, 0.05); 
+    --border-radius: 8px;
+}
+
+/* --- Estilos Globales --- */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 30px 20px;
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+main {
+    width: 100%;
+    max-width: 650px; 
+}
+
+h1 {
+    color: var(--color-primary);
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #343a40;
+    font-size: 1.5em;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* --- Secciones y Contenedores (Simulación de "Tarjetas") --- */
+#entradas, #controles, #resultados {
+    background-color: var(--color-card-bg);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-subtle);
+}
+
+/* --- Entradas de Datos --- */
+#inputs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); 
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.entrada {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 5px;
+    text-align: center;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box; 
+}
+
+.entrada:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* --- Mensajes de Error --- */
+.error {
+    color: var(--color-error);
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* --- Controles (Botones) --- */
+#controles {
+    text-align: center;
+}
+
+button {
+    /* Estilo base */
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+/* Botón Calcular (Primario) */
+#btn-calcular {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+#btn-calcular:not(:disabled):hover {
+    background-color: #0056b3; 
+}
+
+/* Botón Reiniciar (Secundario) */
+#btn-reiniciar {
+    background-color: #e9ecef; /* Gris claro */
+    color: #343a40;
+}
+
+#btn-reiniciar:hover {
+    background-color: #ced4da;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* --- Resultados --- */
+#resultados {
+    padding-bottom: 5px;
+}
+
+#resultados p {
+    font-size: 1.1em;
+    margin: 10px 0;
+    padding: 8px 0;
+    display: flex; 
+    justify-content: space-between;
+    border-bottom: 1px dashed #e9ecef;
+}
+
+#resultados p:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+#resultados p span {
+    font-weight: 700;
+    color: var(--color-primary); /* Destaca los valores */
+    font-size: 1.1em;
+}
+
+/* Estilo para los nombres de las métricas (si es necesario) */
+#resultados p:before {
+    content: attr(data-label);
+    font-weight: 400;
+    color: var(--color-secondary);
+}

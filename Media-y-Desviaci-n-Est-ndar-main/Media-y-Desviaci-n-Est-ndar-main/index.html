@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Media y Desviación Estándar</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <main>
+        <h1>Media aritmética y desviación estándar</h1>
+
+        <!-- Entradas -->
+        <section id="entradas">
+            <h2>Ingrese 10 valores</h2>
+            <div id="inputs-container"></div>
+            <p id="mensaje-error" class="error"></p>
+        </section>
+
+        <!-- Controles -->
+        <section id="controles">
+            <button id="btn-calcular" disabled>Calcular</button>
+            <button id="btn-reiniciar">Reiniciar</button>
+        </section>
+
+        <!-- Resultados -->
+        <section id="resultados">
+            <h2>Resultados</h2>
+            <p>Media: <span id="media"></span></p>
+            <p>Desviación estándar: <span id="desviacion"></span></p>
+            <p>Mínimo: <span id="minimo"></span></p>
+            <p>Máximo: <span id="maximo"></span></p>
+        </section>
+    </main>
+
+    <script src="js/utils.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/calculations.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
